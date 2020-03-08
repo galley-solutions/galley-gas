@@ -4,6 +4,11 @@
   "main": "index.js",
   "author": "benji@galleysolutions.com",
   "license": "MIT",
+  "scripts": {
+    "init": "clasp login",
+    "push": "clasp push",
+    "push:watch": "clasp push --watch"
+  },
   "dependencies": {
     "@google/clasp": "2.3.0",
     "@types/google-apps-script": "1.0.10"
