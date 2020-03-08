@@ -1,0 +1,10 @@
+**/**
+
+!appsscript.json
+!**/*.gs
+!**/*.js
+!**/*.ts
+
+.git/**
+node_modules/**
+.history/**
