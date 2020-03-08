@@ -1,6 +1,12 @@
-# Galley CLASP (Google's Command Line Apps Script Projects)
+<h1 align="center">
+  <br>
+  Galley clasp
+  <br>
+</h1>
 
-This is a repo for GAS (Google App Script) integrations with the Galley API. GAS allows us to integrate with the Galley GraphQL API in Google Docs (like Sheets and Docs). The goal of this repo is to provide utility functions to use as a starting point for things like Menu Planner Google Sheets we build for customers.
+# Overview
+
+[clasp](https://github.com/google/clasp) is Google's Command Line App Script Project tool. This is a repo for GAS (Google App Script) integrations with the Galley API. GAS allows us to integrate with the Galley GraphQL API in Google Docs (like Sheets and Docs). The goal of this repo is to provide utility functions to use as a starting point for things like Menu Planner Google Sheets we build for customers.
 
 # Installation
 
