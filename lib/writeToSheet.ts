@@ -2,7 +2,7 @@ function writeToSheet<TData extends object>({
   data,
   sheetName,
   headers,
-  rowFormatter
+  rowFormatter,
 }: {
   data: TData[];
   sheetName: string;
@@ -14,7 +14,8 @@ function writeToSheet<TData extends object>({
   if (!outputSheet) {
     throw new Error("Couldn't find sheet " + sheetName);
   }
+  outputSheet.clearContents();
   const range = outputSheet.getRange(1, 1, data.length + 1, headers.length);
-  rowFormatter = rowFormatter || (row => headers.map(attr => row[attr]));
+  rowFormatter = rowFormatter || ((row) => headers.map((attr) => row[attr]));
   range.setValues([headers, ...data.map(rowFormatter)]);
 }
