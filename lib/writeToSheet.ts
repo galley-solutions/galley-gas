@@ -4,6 +4,7 @@ function writeToSheet(data: object[], sheetName: string, headers: string[]) {
   if (!outputSheet) {
     throw new Error("Couldn't find sheet " + sheetName);
   }
+  outputSheet.clear();
   const range = outputSheet.getRange(1, 1, data.length + 1, 2);
   range.setValues([
     headers,
