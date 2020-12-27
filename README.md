@@ -1,19 +1,48 @@
 <h1 align="center">
   <br>
-  Galley clasp
+  Galley Google App Scripts
   <br>
 </h1>
 
 # Overview
 
-[clasp](https://github.com/google/clasp) is Google's Command Line App Script Project tool. This is a repo for GAS (Google App Script) integrations with the Galley API. GAS allows us to integrate with the Galley GraphQL API in Google Docs (like Sheets and Docs). The goal of this repo is to provide utility functions to use as a starting point for things like Menu Planner Google Sheets we build for customers.
+This is a library for Google App Scripts aimed at providing easy access to the Galley GraphQL API along with other helpful Google Sheets utility functions.
 
-# Installation
+It uses [clasp](https://github.com/google/clasp) for local development.
 
-`yarn install`
+# Usage
 
+1. In a Google Sheet, go to `Tools > Script Editor`. This will open a bound script for the Sheet.
+2. Click the `+` for `Library` to add a new library
+3. Enter `1oeoJ_ZE-AeyMX0tBauzzViDlkHsjnY0SzHWszs_FkyRMjFiCSaHlzFeV` as the `Script ID`
+4. Click `Lookup`. This should find the `GalleyDataFetch` library and add it to the project.
+   
+You can now use the `GalleyDataFetch` library in your script. Here is an example of how to fetch data and write it to a sheet.
+
+```javascript
+function myFunction() {
+  const query = `
+    query GASRecipe($id: String) {
+      viewer {
+        recipe(id: $id) {
+          id
+          name
+        }
+      }
+    }
+  `;
+  const variables = {
+    id: "ABC123"
+  };
+  const client = new GalleyDataFetch.GalleyGraphQLClient("THE-API-KEY", "staging");
+  const result = client.executeRequest(query, variables).data.viewer.recipe;
+  GalleyDataFetch.writeToSheet([result], "recipes-export", ["id", "name"])
+}
+```
 # Development
 
-The project is setup to support typescript. CLASP will compile the TS and publish the built Javascript. You can add files in any location and they'll get picked up and published to the App Script Project.
-
-When you're ready to push the changes to the project, run `yarn push`. You can also run `yarn push:watch` to continuously push changes as you work.
+1. Clone the repo
+2. `yarn install`
+3. Make code changes
+4. `yarn init` to log in to Google before pushing
+5. `yarn push` to push the latest version to the Google Scripts Project
