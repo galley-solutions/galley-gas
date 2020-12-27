@@ -38,7 +38,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@google/clasp", "npm:2.3.0"],
-            ["@types/google-apps-script", "npm:1.0.20"]
+            ["@types/google-apps-script", "npm:1.0.20"],
+            ["prettier", "npm:2.2.1"],
+            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"]
           ],
           "linkType": "SOFT",
         }]
@@ -679,7 +681,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["galley-gas", "workspace:."],
             ["@google/clasp", "npm:2.3.0"],
-            ["@types/google-apps-script", "npm:1.0.20"]
+            ["@types/google-apps-script", "npm:1.0.20"],
+            ["prettier", "npm:2.2.1"],
+            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"]
           ],
           "linkType": "SOFT",
         }]
@@ -1414,6 +1418,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["prettier", [
+        ["npm:2.2.1", {
+          "packageLocation": "./.yarn/cache/prettier-npm-2.2.1-e0670992f8-92c6c9f4b8.zip/node_modules/prettier/",
+          "packageDependencies": [
+            ["prettier", "npm:2.2.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["public-ip", [
         ["npm:3.2.0", {
           "packageLocation": "./.yarn/cache/public-ip-npm-3.2.0-0f270d17b5-e89e5a63cd.zip/node_modules/public-ip/",
@@ -1650,6 +1663,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typescript-patch-d21a492ee2-dcadfa6d7c.zip/node_modules/typescript/",
           "packageDependencies": [
             ["typescript", "patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=cc6730"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730", {
+          "packageLocation": "./.yarn/cache/typescript-patch-7a9e6321b3-017af99214.zip/node_modules/typescript/",
+          "packageDependencies": [
+            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"]
           ],
           "linkType": "HARD",
         }]

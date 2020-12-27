@@ -551,6 +551,8 @@ __metadata:
   dependencies:
     "@google/clasp": 2.3.0
     "@types/google-apps-script": 1.0.20
+    prettier: ^2.2.1
+    typescript: ^4.1.3
   languageName: unknown
   linkType: soft
 
@@ -1190,6 +1192,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "prettier@npm:2.2.1"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 92c6c9f4b87eba1f28466edee57dd18c80d00b858edda77d46d1950d20e6e302b68ee255fc91133ba931e63c4577b5ae30da194d9626a8f3c0177778b91bf056
+  languageName: node
+  linkType: hard
+
 "public-ip@npm:^3.0.0":
   version: 3.2.0
   resolution: "public-ip@npm:3.2.0"
@@ -1400,6 +1411,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+typescript@^4.1.3:
+  version: 4.1.3
+  resolution: "typescript@npm:4.1.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 4f7ab1506ea22c7a1c313ec5b4285e93ce08d709ad6086d02d3096adb399ca339972ee56d1e578213c51dd0fb7b0fad50283c2d3c39642405644458ae29774f8
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@^3.6.2#builtin<compat/typescript>, typescript@patch:typescript@^3.8.3#builtin<compat/typescript>":
   version: 3.8.3
   resolution: "typescript@patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=cc6730"
@@ -1407,6 +1428,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: dcadfa6d7c90af4ac23181cccda22bdc7270f23a2c8773ab0b6047e2b9b86bcd885da5c5acc020addc1a0df042940ab8e9bbfb33aedcf884bea554fe60fccd32
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.1.3#builtin<compat/typescript>":
+  version: 4.1.3
+  resolution: "typescript@patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 017af992148346e671d5b83b041773825888e9c94db8d2b9472cdbb6d6f0ee85927817473121524d319f8be6ffe5a6904d27ff6ef21356d2274fcadd52e17938
   languageName: node
   linkType: hard
 
