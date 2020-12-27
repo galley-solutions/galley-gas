@@ -1,3 +1,4 @@
-const GALLEY_API_KEY = "51ca98af-10ae-46cb-af3c-f9e6c4cd352c";
-const GALLEY_API_URL =
-  "https://staging-api.galleysolutions.com/internalGraphql";
+const GALLEY_STAGING_API_URL =
+  "https://staging-api.galleysolutions.com/graphql";
+
+const GALLEY_API_URL = "https://api.galleysolutions.com/graphql";

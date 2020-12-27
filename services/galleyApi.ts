@@ -1,24 +1,29 @@
-function executeGalleyRequest({
-  query,
-  variables
-}: {
-  query: string;
-  variables?: object;
-}) {
+function executeGalleyRequest(
+  { apiKey, env }: { apiKey: string; env: "staging" | "production" },
+  {
+    query,
+    variables,
+  }: {
+    query: string;
+    variables?: object;
+  }
+) {
   const payload = {
     query,
-    variables
+    variables,
   };
   const headers = {
-    "x-api-key": GALLEY_API_KEY
+    "x-api-key": apiKey,
   };
   const params = {
-    method: "post",
+    method: "post" as const,
     contentType: "application/json",
     payload: JSON.stringify(payload),
-    headers
+    headers,
   };
-  // @ts-ignore
-  const response = UrlFetchApp.fetch(GALLEY_API_URL, params);
+  const response = UrlFetchApp.fetch(
+    env === "staging" ? GALLEY_STAGING_API_URL : GALLEY_API_URL,
+    params
+  );
   return JSON.parse(response.getContentText());
 }

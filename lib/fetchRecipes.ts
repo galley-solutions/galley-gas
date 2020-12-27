@@ -1,4 +1,10 @@
-function fetchRecipes() {
+function fetchRecipes({
+  apiKey,
+  env,
+}: {
+  apiKey: string;
+  env: "staging" | "production";
+}) {
   const query = `
   query RecipesQuery {
     viewer {
@@ -9,6 +15,7 @@ function fetchRecipes() {
     }
   }
   `;
-  const data = executeGalleyRequest({ query }).data.viewer.recipes;
+  const data = executeGalleyRequest({ apiKey, env }, { query }).data.viewer
+    .recipes;
   writeToSheet({ data, sheetName: "recipes-export", headers: ["id", "name"] });
 }
