@@ -1,13 +1,13 @@
-class GalleyGraphQLClient {
+class GraphQLClient {
   private apiKey: string;
   private url: string;
 
-  private constructor(apiKey: string, env: "staging" | "prop") {
+  constructor(apiKey: string, env: "staging" | "prop") {
     this.apiKey = apiKey;
     this.url = env === "staging" ? GALLEY_STAGING_API_URL : GALLEY_API_URL;
   }
 
-  public executeRequest(query: string, variables?: object) {
+  executeRequest(query: string, variables?: object) {
     const payload = JSON.stringify({
       query,
       variables
@@ -24,4 +24,8 @@ class GalleyGraphQLClient {
     const response = UrlFetchApp.fetch(this.url, params);
     return JSON.parse(response.getContentText());
   }
+}
+
+function galleyApiClient(apiKey: string, env: "staging" | "prop") {
+  return new GraphQLClient(apiKey, env);
 }

@@ -1,9 +1,9 @@
 **/**
 
 !appsscript.json
-!**/*.gs
-!**/*.js
-!**/*.ts
+!src/**/*.gs
+!src/**/*.js
+!src/**/*.ts
 
 .git/**
 node_modules/**
