@@ -42,7 +42,6 @@ function myFunction() {
 # Development
 
 1. Clone the repo
-2. `yarn install`
-3. Make code changes
-4. `yarn init` to log in to Google before pushing
-5. `yarn push` to push the latest version to the Google Scripts Project
+2. Make code changes
+3. `yarn init` to log in to Google before pushing
+4. `yarn push` to push the latest version to the Google Scripts Project
