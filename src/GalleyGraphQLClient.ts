@@ -2,7 +2,7 @@ class GraphQLClient {
   private apiKey: string;
   private url: string;
 
-  constructor(apiKey: string, env: "staging" | "prop") {
+  constructor(apiKey: string, env: "staging" | "production") {
     this.apiKey = apiKey;
     this.url = env === "staging" ? GALLEY_STAGING_API_URL : GALLEY_API_URL;
   }
@@ -26,6 +26,6 @@ class GraphQLClient {
   }
 }
 
-function galleyApiClient(apiKey: string, env: "staging" | "prop") {
+function galleyApiClient(apiKey: string, env: "staging" | "production") {
   return new GraphQLClient(apiKey, env);
 }

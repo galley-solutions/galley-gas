@@ -6,7 +6,7 @@ function writeToSheet(data: object[], sheetName: string, headers: string[]) {
     outputSheet.setName(sheetName);
   }
   outputSheet.clear();
-  const range = outputSheet.getRange(1, 1, data.length + 1, 2);
+  const range = outputSheet.getRange(1, 1, data.length + 1, headers.length);
   range.setValues([
     headers,
     ...data.map(obj => headers.map(attr => obj[attr]))
