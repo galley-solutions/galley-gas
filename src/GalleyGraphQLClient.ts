@@ -19,7 +19,8 @@ class GraphQLClient {
       method: "post" as const,
       contentType: "application/json",
       payload,
-      headers
+      headers,
+      muteHttpExceptions: true
     };
     const response = UrlFetchApp.fetch(this.url, params);
     return JSON.parse(response.getContentText());
