@@ -15,6 +15,7 @@ class GraphQLClient {
     const headers = {
       "x-api-key": this.apiKey
     };
+    console.log(`Executing request: payload=${payload}`);
     const params = {
       method: "post" as const,
       contentType: "application/json",
