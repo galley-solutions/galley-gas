@@ -1,9 +1,12 @@
 function writeToSheet(
   data: object[],
   sheetName: string,
-  headers: string[],
+  headers?: string[],
   renamedHeaders?: string[]
 ) {
+  if (!headers) {
+    headers = Object.keys(data[0]);
+  }
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   let outputSheet = spreadsheet.getSheetByName(sheetName);
   if (!outputSheet) {
