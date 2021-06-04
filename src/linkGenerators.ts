@@ -5,3 +5,7 @@ function recipeLink(recipeId: string, locationId?: string) {
   if (locationId) link += `?locationId=${locationId}`;
   return link;
 }
+
+function vendorItemLink(vendorId: string, vendorItemId: string) {
+  return `${GALLEY_WEB_APP_URL}/vendors/${vendorId}/vendorItems/${vendorItemId}`;
+}
