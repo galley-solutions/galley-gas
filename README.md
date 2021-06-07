@@ -16,6 +16,7 @@ It uses [clasp](https://github.com/google/clasp) for local development.
 2. Click the `+` for `Library` to add a new library
 3. Enter `1oeoJ_ZE-AeyMX0tBauzzViDlkHsjnY0SzHWszs_FkyRMjFiCSaHlzFeV` as the `Script ID`
 4. Click `Lookup`. This should find the `GalleyDataFetch` library and add it to the project.
+5. (Optional) You might also want to include Lodash `1SQ0PlSMwndIuOAgtVJdjxsuXueECtY9OGejVDS37ckSVbMll73EXf2PW`
    
 You can now use the `GalleyDataFetch` library in your script. Here is an example of how to fetch data and write it to a sheet.
 
