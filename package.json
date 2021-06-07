@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "init": "clasp login",
+    "deploy": "clasp deploy",
     "open": "clasp open",
     "push": "clasp push",
     "push:watch": "clasp push --watch"
