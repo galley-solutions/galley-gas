@@ -6,6 +6,10 @@ function recipeLink(recipeId: string, locationId?: string) {
   return link;
 }
 
+function ingredientLink(ingredientId: string) {
+  return `${GALLEY_WEB_APP_URL}/ingredients/${ingredientId}`;
+}
+
 function vendorItemLink(vendorId: string, vendorItemId: string) {
   return `${GALLEY_WEB_APP_URL}/vendors/${vendorId}/vendorItems/${vendorItemId}`;
 }
