@@ -35,9 +35,9 @@ function myFunction() {
   const variables = {
     id: "ABC123"
   };
-  const client = new GalleyDataFetch.GalleyGraphQLClient("THE-API-KEY", "staging");
+  const client = new GalleyDataFetch.galleyApiClient("THE-API-KEY", "staging");
   const result = client.executeRequest(query, variables).data.viewer.recipe;
-  GalleyDataFetch.writeToSheet([result], "recipes-export", ["id", "name"])
+  GalleyDataFetch.writeToSheet([result], "recipes-export", ["id", "name"], ["Recipe ID", "Recipe Name"])
 }
 ```
 # Development
