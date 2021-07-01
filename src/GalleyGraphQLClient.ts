@@ -24,7 +24,11 @@ class GraphQLClient {
       muteHttpExceptions: true
     };
     const response = UrlFetchApp.fetch(this.url, params);
-    return JSON.parse(response.getContentText());
+    try {
+      return JSON.parse(response.getContentText());
+    } catch (e) {
+      throw new Error("Unexpected response: " + response.getContentText());
+    }
   }
 }
 
