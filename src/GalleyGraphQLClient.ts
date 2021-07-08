@@ -23,11 +23,19 @@ class GraphQLClient {
       headers,
       muteHttpExceptions: true
     };
-    const response = UrlFetchApp.fetch(this.url, params);
-    try {
-      return JSON.parse(response.getContentText());
-    } catch (e) {
-      throw new Error("Unexpected response: " + response.getContentText());
+    let retryCount = 0;
+    while (true) {
+      const response = UrlFetchApp.fetch(this.url, params);
+      try {
+        return JSON.parse(response.getContentText());
+      } catch (e) {
+        if (response.getResponseCode() === 403 && retryCount < 4) {
+          console.log("Received 403 response, waiting 1 sec before retrying");
+          Utilities.sleep(1000);
+          retryCount += 1;
+        }
+        throw new Error("Unexpected response: " + response.getContentText());
+      }
     }
   }
 }
