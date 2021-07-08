@@ -7,12 +7,7 @@ function writeToSheet(
   if (!headers) {
     headers = Object.keys(data[0]);
   }
-  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  let outputSheet = spreadsheet.getSheetByName(sheetName);
-  if (!outputSheet) {
-    outputSheet = spreadsheet.insertSheet();
-    outputSheet.setName(sheetName);
-  }
+  const outputSheet = getOrCreateSheet(sheetName);
   outputSheet.clear();
   const range = outputSheet.getRange(1, 1, data.length + 1, headers.length);
   range.setValues([
