@@ -1,3 +1,12 @@
+class GalleyRequestError extends Error {
+  public response: ReturnType<typeof UrlFetchApp.fetch>;
+
+  constructor(response: ReturnType<typeof UrlFetchApp.fetch>) {
+    super("Unexpected response: " + response.getContentText());
+    this.response = response;
+  }
+}
+
 class GraphQLClient {
   private apiKey: string;
   private url: string;
@@ -34,7 +43,7 @@ class GraphQLClient {
           Utilities.sleep(1000);
           retryCount += 1;
         }
-        throw new Error("Unexpected response: " + response.getContentText());
+        throw new GalleyRequestError(response);
       }
     }
   }
