@@ -1,7 +1,7 @@
-function writeToSheet(
-  data: object[],
+function writeToSheet<TObject extends object>(
+  data: TObject[],
   sheetName: string,
-  headers?: string[],
+  headers?: Array<keyof TObject>,
   renamedHeaders?: string[]
 ) {
   if (!headers) {
